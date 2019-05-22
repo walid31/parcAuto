@@ -54,7 +54,23 @@
                                                 <label for="check_modelle">Code voiture</label>
                                               </div>
                                             </div>
-                                    </div>              
+                                    </div>
+                                    <div class="input-group mb-3">
+                                        <div class="input-group-prepend">
+                                          <div class="input-group-text">
+                                            <input type="radio" name="check" value="id_categorie" aria-label="Checkbox for following text input">
+                                            <label for="check_modelle">Categorie</label>
+                                          </div>
+                                        </div>
+                                    </div> 
+                                    <div class="input-group mb-3">
+                                        <div class="input-group-prepend">
+                                          <div class="input-group-text">
+                                            <input type="radio" name="check" value="id_marque" aria-label="Checkbox for following text input">
+                                            <label for="check_modelle">Marque</label>
+                                          </div>
+                                        </div>
+                                </div>             
                        </div>
                      <div class="modal-footer">
                       <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -85,7 +101,11 @@
                     </thead>
                     <tbody>
                     <!-- $assurences hia li b3athnaha men l controlleur -->
-                 
+                  
+                       
+                               
+                        
+                        
 					  @foreach($voitures as $voiture)
 					      <tr>   <td>{{$voiture->id_voiture}}</td>
                          <td>{{$voiture->matricule}}</td>

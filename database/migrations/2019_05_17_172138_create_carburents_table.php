@@ -14,9 +14,8 @@ class CreateCarburentsTable extends Migration
     public function up()
     {
         Schema::create('carburents', function (Blueprint $table) {
-                   $table->increments('id_carburent');
+            $table->increments('id_carburent');
             $table->string('name_carburent');
-           
             $table->rememberToken();
             $table->timestamps();
         });

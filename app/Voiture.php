@@ -12,4 +12,11 @@ class Voiture extends Model
 	
 	'type_vitesse','id_carburent','photo_voiture','valeur','nbr_porte'];
     //
+
+    protected $guarded = [];
+
+    public function modelle()
+    {
+        return $this->belongsTo(Modelle::class);
+    }
 }

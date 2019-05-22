@@ -17,7 +17,7 @@ class CreateModellesTable extends Migration
             $table->increments('id_modelle');
 			$table->string('name_modelle');
 			$table->integer('id_marque');
-			$table->integer('id_categorie');
+			$table->unsignedInteger('id_categorie');
             $table->timestamps();
         });
     }

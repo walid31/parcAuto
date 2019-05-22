@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Voiture;
 use App\Modelle;
+use App\Categorie;
 
 use App\Carburent;
 class VoituresController extends Controller
@@ -97,12 +98,12 @@ $carburents=Carburent :: all();
 			'id_modelle'=>$request->id_modelle,
 			'type_contrat'=>$request->type_contrat,
 			'nbr_place'=>$request->nbr_place,
-				'nbr_porte'=>$request->nbr_porte,
+			'nbr_porte'=>$request->nbr_porte,
 			'nbr_cheveaux'=>$request->nbr_cheveaux,
 			'type_vitesse'=>$request->type_vitesse,
-			//'id_carburent'=>$request->id_carburent,
-             'valeur'=>$request->cout,
-            'voiture' => $path2,
+			'id_carburent'=>$request->id_carburent,
+            'valeur'=>$request->cout,
+            'voiture' => $path1,
 			'cartegrise' => $path2
          
           
@@ -135,10 +136,11 @@ $carburents=Carburent :: all();
 	
 	public function search(Request $request)
 	{
-		 $voitures =Voiture::all()->where($request->check,$request->search);
-		 return view('table_voitures')->with('voitures',$voitures);
-	}
+	 $voitures = Voiture::all()->where($request->check,$request->search);
+	 $modelles = Modelle::all();
+	 return view('table_voitures',compact('voitures','modelles'));
 
+	}
     /**
      * Store a newly created resource in storage.
      *
@@ -187,12 +189,12 @@ $carburents=Carburent :: all();
 			'id_modelle'=>$request->id_modelle,
 			'type_contrat'=>$request->type_contrat,
 			'nbr_place'=>$request->nbr_place,
-				'nbr_porte'=>$request->nbr_porte,
+			'nbr_porte'=>$request->nbr_porte,
 			'nbr_cheveaux'=>$request->nbr_cheveaux,
 			'type_vitesse'=>$request->type_vitesse,
-			'id_carburent'=>$request->id_carburent,
-             'valeur'=>$request->cout,
-            'photo_voiture' => $path2,
+			'id_carburent'=>'2',
+            'valeur'=>$request->cout,
+            'photo_voiture' => $path1,
 			'carte_grise' => $path2
         ]);
 
